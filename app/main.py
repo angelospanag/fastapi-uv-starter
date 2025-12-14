@@ -14,7 +14,7 @@ async def logger_middleware(request: Request, call_next):
         path=request.url.path,
         method=request.method,
         client_host=request.client.host,
-        request_id=str(uuid.uuid4()),
+        request_id=str(uuid.uuid7()),
     )
     response = await call_next(request)
 
