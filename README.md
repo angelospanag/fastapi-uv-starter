@@ -3,45 +3,43 @@
 A starter project using Python, FastAPI and uv.
 
 <!-- TOC -->
-
-- [fastapi-uv-starter](#fastapi-uv-starter)
-  - [Description](#description)
-  - [Prerequisites](#prerequisites)
-    - [1. Install Python 3 and uv](#1-install-python-3-and-uv)
-    - [2. Create a virtual environment with all necessary dependencies](#2-create-a-virtual-environment-with-all-necessary-dependencies)
-  - [Run application](#run-application)
-    - [Development mode](#development-mode)
-    - [Production mode](#production-mode)
-  - [Testing](#testing)
-    - [With coverage](#with-coverage)
-    - [With coverage and HTML output](#with-coverage-and-html-output)
-  - [Linting](#linting)
-  - [Formatting](#formatting)
-  - [Containerisation](#containerisation)
-    - [1. Build image and tag it as `fastapi-uv-starter`](#1-build-image-and-tag-it-as-fastapi-uv-starter)
-    - [2. Run a container of the previously tagged image (`fastapi-uv-starter`)](#2-run-a-container-of-the-previously-tagged-image-fastapi-uv-starter)
-    - [3. Check running containers](#3-check-running-containers)
-    - [4. Hit sample endpoint](#4-hit-sample-endpoint)
-
+* [fastapi-uv-starter](#fastapi-uv-starter)
+  * [Description](#description)
+  * [Prerequisites](#prerequisites)
+    * [1. Install Python 3 and uv](#1-install-python-3-and-uv)
+    * [2. Create a virtual environment with all necessary dependencies](#2-create-a-virtual-environment-with-all-necessary-dependencies)
+  * [Run application](#run-application)
+    * [Development mode](#development-mode)
+    * [Production mode](#production-mode)
+  * [Testing](#testing)
+    * [With coverage](#with-coverage)
+    * [With coverage and HTML output](#with-coverage-and-html-output)
+  * [Linting](#linting)
+  * [Formatting](#formatting)
+  * [Containerisation](#containerisation)
+    * [1. Build image and tag it as `fastapi-uv-starter`](#1-build-image-and-tag-it-as-fastapi-uv-starter)
+    * [2. Run a container of the previously tagged image (`fastapi-uv-starter`)](#2-run-a-container-of-the-previously-tagged-image-fastapi-uv-starter)
+    * [3. Check running containers](#3-check-running-containers)
+    * [4. Hit sample endpoint](#4-hit-sample-endpoint)
 <!-- TOC -->
 
 ## Description
 
 A project starter for personal usage containing the following:
 
-- [Python 3.13.\*](https://www.python.org/)
+- [Python 3.14.\*](https://www.python.org/)
 - [FastAPI](https://fastapi.tiangolo.com/) web framework
 - Structured logging using [`structlog`](https://www.structlog.org/)
 - Dependency management using [`uv`](https://docs.astral.sh/uv/)
 - Containerisation using a Dockerfile
 - Testing with [`pytest`](https://docs.pytest.org/) and optionally with coverage
   with [`pytest-cov`](https://pytest-cov.readthedocs.io/)
-- Linting/formatting using [`ruff`](https://beta.ruff.rs/docs/)
+- Linting/formatting using [`Ruff`](https://docs.astral.sh/ruff/)
 - [`.gitignore`](https://github.com/github/gitignore/blob/main/Python.gitignore)
 
 ## Prerequisites
 
-- [Python 3.13.\*](https://www.python.org/downloads/)
+- [Python 3.14.\*](https://www.python.org/downloads/)
 - [uv](https://docs.astral.sh/uv/)
 
 ### 1. Install Python 3 and uv
@@ -49,7 +47,7 @@ A project starter for personal usage containing the following:
 **MacOS (using `brew`)**
 
 ```bash
-brew install python@3.13 uv
+brew install python@3.14 uv
 ```
 
 **Ubuntu/Debian**
@@ -57,7 +55,7 @@ brew install python@3.13 uv
 ```bash
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
-sudo apt install python3.13
+sudo apt install python3.14
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
