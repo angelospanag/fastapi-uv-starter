@@ -6,6 +6,8 @@ from fastapi import FastAPI, Request, Response
 app = FastAPI()
 logger = structlog.get_logger()
 
+EXCLUDED_PATHS = {"/healthcheck"}
+
 
 @app.middleware("http")
 async def logger_middleware(request: Request, call_next):
@@ -13,7 +15,7 @@ async def logger_middleware(request: Request, call_next):
     structlog.contextvars.bind_contextvars(
         path=request.url.path,
         method=request.method,
-        client_host=request.client.host,
+        client_host=request.client.host if request.client else None,
         request_id=str(uuid.uuid7()),
     )
     response = await call_next(request)
@@ -22,10 +24,9 @@ async def logger_middleware(request: Request, call_next):
         status_code=response.status_code,
     )
 
-    # Exclude /healthcheck endpoint from producing logs
-    if request.url.path != "/healthcheck":
+    if request.url.path not in EXCLUDED_PATHS:
         if 400 <= response.status_code < 500:
-            logger.warn("Client error")
+            logger.warning("Client error")
         elif response.status_code >= 500:
             logger.error("Server error")
         else:

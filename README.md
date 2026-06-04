@@ -5,17 +5,8 @@ A starter project using Python, FastAPI and uv.
 <!-- TOC -->
 * [fastapi-uv-starter](#fastapi-uv-starter)
   * [Description](#description)
-  * [Prerequisites](#prerequisites)
-    * [1. Install Python 3 and uv](#1-install-python-3-and-uv)
-    * [2. Create a virtual environment with all necessary dependencies](#2-create-a-virtual-environment-with-all-necessary-dependencies)
-  * [Run application](#run-application)
-    * [Development mode](#development-mode)
-    * [Production mode](#production-mode)
-  * [Testing](#testing)
-    * [With coverage](#with-coverage)
-    * [With coverage and HTML output](#with-coverage-and-html-output)
-  * [Linting](#linting)
-  * [Formatting](#formatting)
+  * [Getting Started](#getting-started)
+  * [Development](#development)
   * [Containerisation](#containerisation)
     * [1. Build image and tag it as `fastapi-uv-starter`](#1-build-image-and-tag-it-as-fastapi-uv-starter)
     * [2. Run a container of the previously tagged image (`fastapi-uv-starter`)](#2-run-a-container-of-the-previously-tagged-image-fastapi-uv-starter)
@@ -31,85 +22,57 @@ A project starter for personal usage containing the following:
 - [FastAPI](https://fastapi.tiangolo.com/) web framework
 - Structured logging using [`structlog`](https://www.structlog.org/)
 - Dependency management using [`uv`](https://docs.astral.sh/uv/)
+- Toolchain management using [`mise`](https://mise.jdx.dev/)
 - Containerisation using a Dockerfile
 - Testing with [`pytest`](https://docs.pytest.org/) and optionally with coverage
   with [`pytest-cov`](https://pytest-cov.readthedocs.io/)
 - Linting/formatting using [`Ruff`](https://docs.astral.sh/ruff/)
+- Type checking using [`ty`](https://github.com/astral-sh/ty)
 - [`.gitignore`](https://github.com/github/gitignore/blob/main/Python.gitignore)
 
-## Prerequisites
+## Getting Started
 
-- [Python 3.14.\*](https://www.python.org/downloads/)
-- [uv](https://docs.astral.sh/uv/)
+[`mise`](https://mise.jdx.dev/) manages the pinned toolchain (Python 3.14, uv).
 
-### 1. Install Python 3 and uv
-
-**MacOS (using `brew`)**
+**macOS / Linux**
 
 ```bash
-brew install python@3.14 uv
+curl https://mise.run | sh
 ```
 
-**Ubuntu/Debian**
+**Windows**
 
 ```bash
-sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt update
-sudo apt install python3.14
-curl -LsSf https://astral.sh/uv/install.sh | sh
+winget install jdx.mise
 ```
 
-### 2. Create a virtual environment with all necessary dependencies
-
-From the root of the project execute:
+Activate mise in your shell so the pinned versions take precedence over any system installs (Homebrew, etc.). In `~/.zshrc`:
 
 ```bash
-uv sync
+eval "$(mise activate zsh)"
 ```
 
-## Run application
-
-### Development mode
+Then, in the repo:
 
 ```bash
-uv run fastapi dev
+mise trust        # one-time, confirms you trust this repo's mise.toml
+mise install      # downloads and pins Python and uv
+mise run install  # installs dependencies into .venv
 ```
 
-### Production mode
+## Development
 
-```bash
-uv run fastapi run
-```
-
-## Testing
-
-```bash
-uv run pytest
-```
-
-### With coverage
-
-```bash
-uv run pytest --cov=app
-```
-
-### With coverage and HTML output
-
-```bash
-uv run pytest --cov-report html --cov=app
-```
-
-## Linting
-
-```bash
-uv run ruff check app/* tests/*
-```
-
-## Formatting
-
-```bash
-uv run ruff format app/* tests/*
-```
+| Command              | Description                              |
+|----------------------|------------------------------------------|
+| `mise run install`   | Install dependencies into `.venv`        |
+| `mise run dev`       | FastAPI dev server on 127.0.0.1:8000     |
+| `mise run serve`     | Production server on 0.0.0.0:8000        |
+| `mise run test`      | Run tests with coverage                  |
+| `mise run fmt`       | Format code via `ruff format`            |
+| `mise run lint`      | Lint code via `ruff check`               |
+| `mise run typecheck` | Type check via `ty check`                |
+| `mise run vuln`      | Audit deps for known vulnerabilities     |
+| `mise run deps`      | Update and sync dependencies             |
 
 ## Containerisation
 

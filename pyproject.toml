@@ -7,7 +7,7 @@ authors = [
 description = "A starter project using Python, FastAPI and uv."
 readme = "README.md"
 requires-python = ">=3.14"
-dependencies = ["fastapi[standard]>=0.126.0", "structlog>=25.5.0"]
+dependencies = ["fastapi[standard]>=0.136.3", "structlog>=25.5.0"]
 
 [dependency-groups]
-dev = ["httpx>=0.28.1", "pytest>=9.0.2", "pytest-cov>=7.0.0", "ruff>=0.14.10"]
+dev = ["httpx2>=2.3.0", "pytest>=9.0.3", "pytest-cov>=7.1.0", "ruff>=0.15.16", "ty>=0.0.43"]

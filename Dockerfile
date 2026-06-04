@@ -5,7 +5,6 @@ RUN uv sync --frozen --no-dev
 COPY app/ app/
 
 FROM python:3.14-slim AS runtime
-COPY --from=builder /app/.venv /app/.venv
 ENV PATH="/app/.venv/bin:$PATH"
 WORKDIR /app
 COPY --from=builder /app /app

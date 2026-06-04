@@ -29,6 +29,24 @@ spec:
       containers:
       - name: fastapi-uv-starter
         image: fastapi-uv-starter:latest
-        imagePullPolicy: Never
         ports:
         - containerPort: 80
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "500m"
+            memory: "256Mi"
+        readinessProbe:
+          httpGet:
+            path: /healthcheck
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /healthcheck
+            port: 80
+          initialDelaySeconds: 15
+          periodSeconds: 20
