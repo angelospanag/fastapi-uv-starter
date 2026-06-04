@@ -25,3 +25,6 @@ jobs:
 
       - name: Vulnerability audit
         run: mise run vuln
+
+      - name: Run tests
+        run: mise run test
