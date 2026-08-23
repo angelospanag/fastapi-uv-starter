@@ -3,15 +3,15 @@
 A starter project using Python, FastAPI and uv.
 
 <!-- TOC -->
-* [fastapi-uv-starter](#fastapi-uv-starter)
-  * [Description](#description)
-  * [Getting Started](#getting-started)
-  * [Development](#development)
-  * [Containerisation](#containerisation)
-    * [1. Build image and tag it as `fastapi-uv-starter`](#1-build-image-and-tag-it-as-fastapi-uv-starter)
-    * [2. Run a container of the previously tagged image (`fastapi-uv-starter`)](#2-run-a-container-of-the-previously-tagged-image-fastapi-uv-starter)
-    * [3. Check running containers](#3-check-running-containers)
-    * [4. Hit sample endpoint](#4-hit-sample-endpoint)
+- [fastapi-uv-starter](#fastapi-uv-starter)
+  - [Description](#description)
+  - [Getting Started](#getting-started)
+  - [Development](#development)
+  - [Containerisation](#containerisation)
+    - [1. Build image and tag it as `fastapi-uv-starter`](#1-build-image-and-tag-it-as-fastapi-uv-starter)
+    - [2. Run a container of the previously tagged image (`fastapi-uv-starter`)](#2-run-a-container-of-the-previously-tagged-image-fastapi-uv-starter)
+    - [3. Check running containers](#3-check-running-containers)
+    - [4. Hit sample endpoint](#4-hit-sample-endpoint)
 <!-- TOC -->
 
 ## Description
@@ -32,7 +32,7 @@ A project starter for personal usage containing the following:
 
 ## Getting Started
 
-[`mise`](https://mise.jdx.dev/) manages the pinned toolchain (Python 3.14, uv).
+[`mise`](https://mise.jdx.dev/) manages the pinned toolchain (Python 3.14.7, uv 0.12.5).
 
 **macOS / Linux**
 
@@ -62,17 +62,17 @@ mise run install  # installs dependencies into .venv
 
 ## Development
 
-| Command              | Description                              |
-|----------------------|------------------------------------------|
-| `mise run install`   | Install dependencies into `.venv`        |
-| `mise run dev`       | FastAPI dev server on 127.0.0.1:8000     |
-| `mise run serve`     | Production server on 0.0.0.0:8000        |
-| `mise run test`      | Run tests with coverage                  |
-| `mise run fmt`       | Format code via `ruff format`            |
-| `mise run lint`      | Lint code via `ruff check`               |
-| `mise run typecheck` | Type check via `ty check`                |
-| `mise run vuln`      | Audit deps for known vulnerabilities     |
-| `mise run deps`      | Update and sync dependencies             |
+| Command              | Description                          |
+| -------------------- | ------------------------------------ |
+| `mise run install`   | Install dependencies into `.venv`    |
+| `mise run dev`       | FastAPI dev server on 127.0.0.1:8000 |
+| `mise run serve`     | Production server on 0.0.0.0:8000    |
+| `mise run test`      | Run tests with coverage              |
+| `mise run fmt`       | Format code via `ruff format`        |
+| `mise run lint`      | Lint code via `ruff check`           |
+| `mise run typecheck` | Type check via `ty check`            |
+| `mise run vuln`      | Audit deps for known vulnerabilities |
+| `mise run deps`      | Update and sync dependencies         |
 
 ## Containerisation
 

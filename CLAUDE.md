@@ -4,19 +4,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Commands
 
-All tasks run via `mise run <task>`. The toolchain (Python 3.14, uv) is pinned in `mise.toml`.
+All tasks run via `mise run <task>`. The toolchain (Python 3.14.7, uv 0.12.5) is pinned in `mise.toml`.
 
-| Task | Command |
-|---|---|
-| Install deps | `mise run install` |
-| Dev server | `mise run dev` |
-| Production server | `mise run serve` |
-| Tests | `mise run test` |
-| Format | `mise run fmt` |
-| Lint | `mise run lint` |
-| Type check | `mise run typecheck` |
-| Vulnerability audit | `mise run vuln` |
-| Upgrade deps | `mise run deps` |
+| Task                | Command              |
+| ------------------- | -------------------- |
+| Install deps        | `mise run install`   |
+| Dev server          | `mise run dev`       |
+| Production server   | `mise run serve`     |
+| Tests               | `mise run test`      |
+| Format              | `mise run fmt`       |
+| Lint                | `mise run lint`      |
+| Type check          | `mise run typecheck` |
+| Vulnerability audit | `mise run vuln`      |
+| Upgrade deps        | `mise run deps`      |
 
 Run a single test: `uv run pytest tests/test_main.py::test_healthcheck -v`
 
