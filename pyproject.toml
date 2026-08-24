@@ -1,3 +1,4 @@
+# This project uses `uv` for dependency management. `uv export` works natively without Poetry plugins.
 [project]
 name = "fastapi-uv-starter"
 version = "0.1.0"
