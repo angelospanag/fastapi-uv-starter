@@ -1,6 +1,6 @@
 [tools]
-python = "3.14.7"
-uv = "0.12.5"
+python = "3.15.2"
+uv = "0.13.7"
 
 [tasks.dev]
 description = "🚀 FastAPI dev server on 127.0.0.1:8000"

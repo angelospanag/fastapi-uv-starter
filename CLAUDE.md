@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Commands
 
-All tasks run via `mise run <task>`. The toolchain (Python 3.14.7, uv 0.12.5) is pinned in `mise.toml`.
+All tasks run via `mise run <task>`. The toolchain (Python 3.15.2, uv 0.13.7) is pinned in `mise.toml`.
 
 | Task                | Command              |
 | ------------------- | -------------------- |

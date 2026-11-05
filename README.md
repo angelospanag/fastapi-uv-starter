@@ -18,7 +18,7 @@ A starter project using Python, FastAPI and uv.
 
 A project starter for personal usage containing the following:
 
-- [Python 3.14.\*](https://www.python.org/)
+- [Python 3.15.\*](https://www.python.org/)
 - [FastAPI](https://fastapi.tiangolo.com/) web framework
 - Structured logging using [`structlog`](https://www.structlog.org/)
 - Dependency management using [`uv`](https://docs.astral.sh/uv/)
@@ -32,7 +32,7 @@ A project starter for personal usage containing the following:
 
 ## Getting Started
 
-[`mise`](https://mise.jdx.dev/) manages the pinned toolchain (Python 3.14.7, uv 0.12.5).
+[`mise`](https://mise.jdx.dev/) manages the pinned toolchain (Python 3.15.2, uv 0.13.7).
 
 **macOS / Linux**
 
@@ -86,10 +86,10 @@ podman image build -t fastapi-uv-starter .
 
 ### 2. Run a container of the previously tagged image (`fastapi-uv-starter`)
 
-Run our FastAPI application and map our local port `8000` to `80` on the running container:
+Run our FastAPI application and map our local port `8000` to `8000` on the running container:
 
 ```bash
-podman container run -d --name fastapi-uv-starter -p 8000:80 --network bridge fastapi-uv-starter
+podman container run -d --name fastapi-uv-starter -p 8000:8000 --network bridge fastapi-uv-starter
 ```
 
 ### 3. Check running containers
@@ -100,7 +100,7 @@ podman ps
 
 ```bash
 CONTAINER ID  IMAGE                            COMMAND               CREATED         STATUS             PORTS                 NAMES
-78586e5b4683  localhost/fastapi-uv-starter:latest  uvicorn main:app ...  13 minutes ago  Up 5 minutes ago  0.0.0.0:8000->80/tcp  nifty_roentgen
+78586e5b4683  localhost/fastapi-uv-starter:latest  fastapi run app/...     13 minutes ago  Up 5 minutes ago  0.0.0.0:8000->8000/tcp  nifty_roentgen
 ```
 
 ### 4. Hit sample endpoint
